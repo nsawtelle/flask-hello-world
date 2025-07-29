@@ -1,0 +1,12 @@
+services:
+ - type: web
+   name: 3308-flask-app
+   env: python
+   buildCommand: pip install -r requirements.txt
+   startCommand: gunicorn app:app
+   runtime: python
+   plan: free
+   branch: master
+   region: oregon
+   
+    
