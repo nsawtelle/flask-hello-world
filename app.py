@@ -1,5 +1,5 @@
 from flask import Flask
-import psycopg2
+import psycopg
 app = Flask(__name__)
 
 @app.route('/')
@@ -8,6 +8,6 @@ def hello_world():
 
 @app.route('/db_test')
 def testing():
-    conn = psycopg2.connect("postgresql://db_3308_flask_db_user:80XZPI6NZDC7TVZa2OifsiV6yTm8cEAR@dpg-d23rademcj7s739m9jag-a/db_3308_flask_db")
+    conn = psycopg.connect("postgresql://db_3308_flask_db_user:80XZPI6NZDC7TVZa2OifsiV6yTm8cEAR@dpg-d23rademcj7s739m9jag-a/db_3308_flask_db")
     conn.close()
     return "Database Connection Successful"
